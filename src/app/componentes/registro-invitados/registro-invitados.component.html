@@ -1,0 +1,23 @@
+<div class="stars-container">
+  <app-stars-background></app-stars-background>
+
+  <div class="container">
+    <div class="card p-4 shadow-lg">
+      <h2>Casa Abierta</h2>
+      <form [formGroup]="registroForm" (ngSubmit)="registrarInvitado()">
+        <div class="form-group">
+          <label for="nombre">Nombre:</label>
+          <input id="nombre" formControlName="nombre" type="text" class="form-control">
+        </div>
+        <div class="form-group">
+          <label for="correo_electronico">Correo Electrónico:</label>
+          <input id="correo_electronico" formControlName="correo_electronico" type="email" class="form-control">
+        </div>
+        <div>
+          <button type="submit" class="btn btn-primary" [disabled]="!registroForm.valid">Registrar</button>
+        </div>
+      </form>
+      <a routerLink="/lista-invitados" class="btn btn-link text-white mt-3">Ver Lista de Invitados</a>
+    </div>
+  </div>
+</div>

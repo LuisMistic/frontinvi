@@ -1,0 +1,20 @@
+.tarjeta {
+  border: 1px solid #ccc;
+  padding: 20px;
+  margin: 10px;
+  text-align: center;
+  background-color: #f9f9f9;
+  width: 300px; /* Ajusta el ancho según tu diseño */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  border-radius: 8px; /* Bordes redondeados */
+}
+
+.tarjeta h2 {
+  font-size: 1.5rem; /* Tamaño del título */
+  margin-bottom: 10px;
+}
+
+.tarjeta p {
+  font-size: 1rem; /* Tamaño del texto */
+  margin-bottom: 5px;
+}

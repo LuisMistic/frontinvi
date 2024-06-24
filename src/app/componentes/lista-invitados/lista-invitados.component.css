@@ -1,0 +1,117 @@
+/* styles.css */
+body {
+  background: url('https://example.com/music-event-bg.jpg') no-repeat center center fixed;
+  background-size: cover;
+  font-family: 'Roboto', sans-serif;
+  color: #000000;
+}
+
+.container {
+  max-width: 100%;
+  margin-top: 50px;
+  padding: 0 15px;
+}
+
+.card {
+  background: rgba(0, 0, 0, 0.75);
+  border-radius: 15px;
+  padding: 20px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 8px rgba(255, 255, 0, 0.3);
+  transition: transform 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+}
+
+h2 {
+  color: #f8d210;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.form-group label {
+  color: #f8d210;
+}
+
+.form-group input {
+  border: 2px solid #f8d210;
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+}
+
+.btn-primary {
+  background-color: #f8d210;
+  border-color: #f8d210;
+  color: #000000;
+  transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
+}
+
+.btn-primary:hover {
+  background-color: #ffcc00;
+  transform: scale(1.05);
+}
+
+.btn-link {
+  color: #f8d210;
+  transition: color 0.3s ease-in-out;
+}
+
+.btn-link:hover {
+  color: #ffcc00;
+  text-decoration: none;
+}
+
+input:focus, button:focus {
+  outline: none;
+  box-shadow: 0 0 10px #f8d210;
+}
+
+table {
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.75);
+  border-collapse: collapse;
+  color: white;
+  margin-bottom: 20px;
+}
+
+th, td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+th {
+  background-color: #555;
+}
+
+@keyframes flicker {
+  0% { opacity: 1; }
+  50% { opacity: 0.8; }
+  100% { opacity: 1; }
+}
+
+@media (max-width: 576px) {
+  .container {
+    margin-top: 50px;
+    padding: 10px;
+  }
+
+  .card {
+    padding: 20px;
+  }
+
+  h2 {
+    font-size: 24px;
+  }
+
+  .btn-lg {
+    padding: 0.5rem 1.5rem;
+  }
+
+  th, td {
+    font-size: 12px;
+  }
+}
