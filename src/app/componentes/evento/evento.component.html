@@ -1,0 +1,55 @@
+<div class="stars-container">
+    <app-stars-background></app-stars-background>
+    <div class="container">
+      <div class="card p-4 shadow-lg" style="position: relative; z-index: 10;">
+        <h2>Evento del 13 de Julio Casa Abierta</h2>
+  
+        <!-- Botón "Música en Vivo" -->
+        <button class="accordion-button" (click)="toggleAccordion('music')">Música en Vivo</button>
+        <div id="music" class="accordion-content">
+          <p>Vibramos al sonido de la música y que la danza nos alimente las ganas de compartir.</p>
+          <p>Te daremos más información brevemente.</p>
+        </div>
+  
+        <!-- Botón "Comida Mexicana" -->
+        <button class="accordion-button" (click)="toggleAccordion('food')">Comida Mexicana</button>
+        <div id="food" class="accordion-content">
+          <p>Con los mejores sabores mexicanos envueltos de brazos argentinos.</p>
+          <p>Próximamente más información.</p>
+        </div>
+  
+        <!-- Botón "Cerveza Artesanal" -->
+        <button class="accordion-button" (click)="toggleAccordion('beer')">Cerveza Artesanal</button>
+        <div id="beer" class="accordion-content">
+          <p>Te recomendamos que te prepares para disfrutar de la mejor cerveza artesanal.</p>
+          <p>Próximamente más información.</p>
+        </div>
+  
+        <!-- Botón "Bandas en Vivo" -->
+        <button class="accordion-button" (click)="toggleAccordion('bands')">Bandas en Vivo</button>
+        <div id="bands" class="accordion-content">
+          <p>Tendremos dos grupos musicales y más sorpresas.</p>
+          <p>Próximamente más información.</p>
+        </div>
+  
+        <!-- Nueva sección: "Contacto" dentro de una barra -->
+        <button class="accordion-button" (click)="toggleAccordion('contac')">Contacto</button>
+       <div id="contac" class="accordion-content small-text">
+        <p>
+            Venite a las 20 horas y disfrutar de la comida y  refrescos, todo a precios accesibles y fundamental  para estas iniciativas del encuentro, el arte y la vida.
+          </p>
+          <p >
+            te estaremos enviando info por correo. Tambien pasate por la pagina que la estaremos actualizando.
+          </p>
+          
+          </div>
+       
+  
+        <!-- Botón "Volver a Registro" centrado -->
+        <div class="d-flex justify-content-center mt-3">
+          <a routerLink="/registro-invitados" class="btn btn-warning">Volver a Registro</a>
+        </div>
+      </div>
+    </div>
+  </div>
+  

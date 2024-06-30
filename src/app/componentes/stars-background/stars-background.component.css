@@ -83,13 +83,13 @@
 
 .planet {
   position: absolute;
-  bottom: 100px; /* Ajusta la posición vertical del planeta desde el borde inferior */
+  bottom: 10px; /* Ajusta la posición vertical del planeta desde el borde inferior */
   left: 50%; /* Centra el planeta horizontalmente */
   transform: translateX(-50%) rotate(0deg); /* Ajusta para centrar horizontalmente y establece la rotación inicial */
   width: 150px; /* Ajusta el ancho del planeta según su tamaño */
-  z-index: 2; /* Asegura que esté detrás del formulario y del contenido principal */
+  z-index: 1; /* Asegura que esté detrás del formulario y del contenido principal */
   box-shadow: 0 0 50px rgba(255, 255, 255, 0.5); /* Sombra difusa para simular atmósfera */
-  border-radius: 50%; /* Borde redondeado para simular forma de planeta */
+  border-radius: 45%; /* Borde redondeado para simular forma de planeta */
   animation: rotate-planet 60s linear infinite; /* Animación de rotación */
 }
 

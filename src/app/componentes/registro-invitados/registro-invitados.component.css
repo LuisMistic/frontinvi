@@ -1,30 +1,72 @@
+.alert {
+  background: rgba(0, 0, 0, 0.75); /* Fondo menos transparente */
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  margin-bottom: 20px;
+  text-align: center; /* Texto centrado */
+  color: #ffffff; /* Color del texto blanco */
+}
+
+.alert.alert-success {
+  background-color: #9fa72885; /* Fondo verde */
+}
+
+.alert.alert-danger {
+  background-color: #dc354677; /* Fondo rojo */
+}
+
+.card-info {
+  background-color: rgba(0, 0, 0, 0.5); /* Fondo menos transparente */
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.card-info p {
+  color: #ffffff; /* Color del texto blanco */
+}
+
+.btn-volver {
+  margin-top: 20px; /* Ajusta el margen superior */
+  text-align: center; /* Alinea el botón al centro */
+}
+
+/* Ajuste de los estilos generales restantes */
 .stars-container {
   position: relative;
   width: 100%;
   height: 100vh;
-  background: black; /* Fondo negro para el componente */
+  background: black;
   overflow: hidden;
   font-family: 'Roboto', sans-serif;
   color: #ffffff;
 }
 
 .container {
+  padding-top: 60px; /* Ajusta esta cantidad para mover el formulario más abajo */
   display: flex;
   justify-content: center;
-  align-items: center;
-  height: 100%;
-  position: relative; /* Asegura que esté encima del fondo de estrellas */
-  z-index: 1; /* Asegura que esté encima del fondo de estrellas */
+  align-items: flex-start;
+  height: calc(100% - 20px);
+  position: relative;
+  z-index: 1;
 }
 
 .card {
-  background: rgba(0, 0, 0, 0.75); /* Fondo semi-transparente para el formulario */
+  background: rgba(0, 0, 0, 0.75);
   border-radius: 15px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   max-width: 500px;
   padding: 20px;
-  position: relative; /* Asegura que esté encima del fondo de estrellas */
-  z-index: 2; /* Asegura que esté encima del fondo de estrellas */
+  position: relative;
+  z-index: 2;
+  transition: transform 0.8s ease; /* Agregar transición de transformación */
+}
+
+.card.mb-4.out {
+  transform: translateY(500%); /* Desplazar completamente fuera de la vista */
 }
 
 h2 {
@@ -54,27 +96,106 @@ h2 {
   background-color: #f8d210;
   border-color: #f8d210;
   color: #000000;
-  transition: background-color 0.3s ease-in-out, transform 0.3s ease-in-out;
   padding: 10px 20px;
   border-radius: 5px;
 }
 
 .btn-primary:hover {
   background-color: #ffcc00;
-  transform: scale(1.05);
 }
 
 .btn-link {
   color: #f8d210;
   text-decoration: none;
-  transition: color 0.3s ease-in-out;
 }
 
 .btn-link:hover {
   color: #ffcc00;
 }
 
-input:focus, button:focus {
+input:focus,
+button:focus {
   outline: none;
   box-shadow: 0 0 10px #f8d210;
+}
+
+.text-success {
+  color: #000000; /* Cambiar color del texto de éxito */
+}
+
+.typing-text {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  font-size: 2rem;
+  color: #000000;
+  z-index: 1000; /* Asegura que esté por encima del resto del contenido */
+}
+
+.typing-text-yellow {
+  color: rgb(235, 235, 122);
+  font-size: 1rem; /* Ejemplo: ajusta el tamaño de fuente según tus preferencias */
+  /* Añade cualquier otra propiedad de estilo según lo necesites */
+}
+
+@keyframes text-glow {
+  0% {
+    text-shadow: 0 0 5px #fff;
+  }
+  50% {
+    text-shadow: 0 0 20px #ffdf00, 0 0 30px #ffdf00, 0 0 40px #ffdf00;
+  }
+  100% {
+    text-shadow: 0 0 5px #fff;
+  }
+}
+
+.form-control:focus {
+  animation: text-glow 1s infinite alternate;
+}
+
+@keyframes heartbeat {
+  0% {
+    transform: scale(1);
+  }
+  25% {
+    transform: scale(1.1);
+  }
+  50% {
+    transform: scale(1);
+  }
+  75% {
+    transform: scale(1.1);
+  }
+  80% {
+    transform: scale(1);
+  }
+}
+
+.heartbeat-button {
+  animation: heartbeat 1.5s infinite;
+}
+.card {
+  background: rgba(0, 0, 0, 0.75);
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  max-width: 400px; /* Limita el ancho del formulario */
+  width: 100%; /* Asegura que ocupe el 100% del contenedor hasta el max-width */
+  padding: 20px;
+  position: relative;
+  z-index: 2;
+  transition: transform 0.8s ease; /* Agregar transición de transformación */
+}
+
+.form-group input {
+  border: 2px solid #f8d210;
+  background: rgba(255, 255, 255, 0.1);
+  color: #ffffff;
+  padding: 8px;
+  width: 100%;
+  border-radius: 5px;
+  margin-bottom: 15px;
+  max-width: 100%; /* Asegura que el input no se expanda más allá del contenedor */
 }

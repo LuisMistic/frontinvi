@@ -1,23 +1,51 @@
-<div class="stars-container">
+<div *ngIf="mensajeAlerta" class="alert alert-danger">
+  {{ mensajeAlerta }}
+</div>
+
+<div class="typing-text">
+  <p class="text-center" *ngIf="textoMostrado">{{ textoMostrado }}</p>
+</div>
+
+<div class="stars-container" *ngIf="textoTerminado">
+  <app-countdown [showCountdown]="showCountdown"></app-countdown>
   <app-stars-background></app-stars-background>
 
   <div class="container">
     <div class="card p-4 shadow-lg">
-      <h2>Casa Abierta</h2>
-      <form [formGroup]="registroForm" (ngSubmit)="registrarInvitado()">
-        <div class="form-group">
-          <label for="nombre">Nombre:</label>
-          <input id="nombre" formControlName="nombre" type="text" class="form-control">
+      <div [@slideOut]="containerState">
+        <div *ngIf="registroExitoso" class="alert alert-success" role="alert">
+          ¡Gracias por inscribirte al evento, <span class="text-success">{{ nombreInvitado }}</span>! Te estaremos informando a través de tu correo. Hay capacidad limitada, esperamos verte.
         </div>
-        <div class="form-group">
-          <label for="correo_electronico">Correo Electrónico:</label>
-          <input id="correo_electronico" formControlName="correo_electronico" type="email" class="form-control">
+
+        <div *ngIf="registroExitoso" class="card mb-4 p-3 bg-danger text-white" style="font-size: 0.9rem;">
+          <div class="card-body">
+            <p class="card-text">Te enviaremos un correo electrónico pronto con los detalles del evento. Revisa tu correo y spam. ¡Gracias!</p>
+          </div>
         </div>
-        <div>
-          <button type="submit" class="btn btn-primary" [disabled]="!registroForm.valid">Registrar</button>
+
+        <h2>Casa Abierta</h2>
+        <!-- Asegurémonos de que el botón dirija correctamente a /evento -->
+        <button class="btn btn-warning mb-3" routerLink="/evento">Ir a Evento</button>
+        
+        <form [formGroup]="registroForm" (ngSubmit)="registrarInvitado()">
+          <div class="form-group">
+            <label for="nombre">Nombre:</label>
+            <input id="nombre" formControlName="nombre" type="text" class="form-control" (focus)="onFocus('nombre')" (blur)="onBlur('nombre')">
+          </div>
+          <div class="form-group">
+            <label for="correo_electronico">Correo Electrónico:</label>
+            <input id="correo_electronico" formControlName="correo_electronico" type="email" class="form-control" (focus)="onFocus('correo_electronico')" (blur)="onBlur('correo_electronico')">
+            <div *ngIf="correoError" class="text-danger">Correo mal ingresado</div>
+          </div>
+          <div>
+            <button type="submit" class="btn btn-primary" [ngClass]="{'heartbeat-button': !(registroForm.get('correo_electronico')?.hasError('sinArroba')) && !registroExitoso}" [disabled]="!registroForm.valid">Registrar</button>
+          </div>
+        </form>
+
+        <div class="mt-4" [@fadeIn]>
+          <p class="text-center typing-text-yellow" *ngIf="textoAdicionalMostrado">{{ textoAdicionalMostrado }}</p>
         </div>
-      </form>
-      <a routerLink="/lista-invitados" class="btn btn-link text-white mt-3">Ver Lista de Invitados</a>
+      </div>
     </div>
   </div>
 </div>

@@ -6,8 +6,8 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class InvitadoService {
-  private apiUrl = 'http://localhost:3000/invitados';
-
+  // private apiUrl = 'http://localhost:3000/invitados';
+ private apiUrl = 'https://backevent.onrender.com/invitados'; // Actualiza la URL según tu backend en Render
   constructor(private http: HttpClient) {}
 
   obtenerInvitados(): Observable<any[]> {

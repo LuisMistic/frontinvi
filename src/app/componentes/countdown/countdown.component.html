@@ -1,0 +1,5 @@
+<div *ngIf="showCountdown" class="countdown" [@slideInOut]="showCountdown ? 'in' : 'out'">
+  <div class="countdown-number" [class.fade-out]="countdownNumber === null">
+    {{ countdownNumber }}
+  </div>
+</div>

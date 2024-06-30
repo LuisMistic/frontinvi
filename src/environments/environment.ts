@@ -1,5 +1,4 @@
 export const environment = {
-    production: false,
-    apiUrl: 'http://localhost:4200', // Cambia la URL según tu backend
-  };
-  
+  production: false,
+  apiUrl: 'http://localhost:3000', // URL del backend en desarrollo
+};

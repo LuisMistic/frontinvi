@@ -1,0 +1,28 @@
+.countdown {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px; /* Ajusta según sea necesario */
+  font-size: 5rem;
+  color: #f8d210;
+  text-shadow: 0 0 20px #f8d210;
+}
+
+.fade-out {
+  animation: countdown 1s forwards;
+}
+
+@keyframes countdown {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+}
