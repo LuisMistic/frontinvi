@@ -11,6 +11,7 @@ import {
   transition,
   keyframes
 } from '@angular/animations';
+import { ComunicacionService } from 'src/comunicacion.service';
 
 @Component({
   selector: 'app-registro-invitados',
@@ -67,7 +68,7 @@ export class RegistroInvitadosComponent  {
   mostrarRegistro: boolean = true; // Variable para controlar la visibilidad del registro
   mostrarEvento: boolean = false; // Variable para controlar la visibilidad del evento
 
-  constructor(private fb: FormBuilder, private invitadoService: InvitadoService, private router: Router) {
+  constructor(private fb: FormBuilder, private invitadoService: InvitadoService, private router: Router, public comunicacionService: ComunicacionService) {
     this.registroForm = this.fb.group({
       nombre: ['', Validators.required],
       correo_electronico: ['', [Validators.required, Validators.email]],
@@ -151,6 +152,7 @@ export class RegistroInvitadosComponent  {
           console.log('Invitado registrado:', response);
           // Simulación de envío de correo electrónico
           this.enviarCorreoElectronico(invitadoData.correo_electronico);
+          this.cambiarComponente('evento')
         },
         error: (error: HttpErrorResponse) => {
           console.error('Error al registrar el invitado:', error);
@@ -241,4 +243,10 @@ export class RegistroInvitadosComponent  {
     // Por ejemplo, validar el formulario antes de navegar
     this.router.navigateByUrl('/registro'); // Mantenemos en la misma ruta
   }
+  public cambiarComponente(nombre: string) {
+    if (nombre !== this.comunicacionService.currentComponent) {
+        this.comunicacionService.cambiarComponente(nombre);
+        console.log("Cambio de componente fue un éxito");
+    }
+}
 }

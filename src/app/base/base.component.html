@@ -1,0 +1,16 @@
+<div *ngIf="comunicacionServicio.currentComponent === 'login'">
+    <app-login></app-login>
+  </div>
+  
+  <ng-container *ngIf="comunicacionServicio.currentComponent === 'registro' || comunicacionServicio.currentComponent === 'default'">
+    <app-registro-invitados></app-registro-invitados>
+  </ng-container>
+  
+  <ng-container *ngIf="comunicacionServicio.currentComponent === 'evento'">
+    <app-evento></app-evento>
+  </ng-container>
+  
+  <ng-container *ngIf="comunicacionServicio.currentComponent === 'admin-lista-invitados' && isAdminLoggedIn">
+    <app-admin-lista-invitados></app-admin-lista-invitados>
+  </ng-container>
+  

@@ -27,7 +27,7 @@
         <!-- Asegurémonos de que el botón dirija correctamente a /evento -->
         <button class="btn btn-warning mb-3" routerLink="/evento">Ir a Evento</button>
         
-        <form [formGroup]="registroForm" (ngSubmit)="registrarInvitado()">
+        <form [formGroup]="registroForm" (ngSubmit)="cambiarComponente('evento')">
           <div class="form-group">
             <label for="nombre">Nombre:</label>
             <input id="nombre" formControlName="nombre" type="text" class="form-control" (focus)="onFocus('nombre')" (blur)="onBlur('nombre')">

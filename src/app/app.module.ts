@@ -12,10 +12,11 @@ import { EventoComponent } from './componentes/evento/evento.component';
 import { EventoModule } from './componentes/evento/evento.module';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { CountdownComponent } from './componentes/countdown/countdown.component';
-
-
-
-
+import { BaseComponent } from './base/base.component';
+import { LoginComponent } from './componentes/login/login.component';
+import { AdminListaInvitadosComponent } from './componentes/admin-lista-invitados/admin-lista-invitados.component';
+import { AuthService } from './componentes/auth.service';
+import { PasswordGeneratorComponent } from './componentes/password-generator/password-generator.component';
 
 
 
@@ -27,6 +28,10 @@ import { CountdownComponent } from './componentes/countdown/countdown.component'
     StarsBackgroundComponent,
     EventoComponent,
     CountdownComponent,
+    BaseComponent,
+    LoginComponent,
+    PasswordGeneratorComponent,
+    AdminListaInvitadosComponent,
 
   ],
   imports: [
@@ -36,9 +41,12 @@ import { CountdownComponent } from './componentes/countdown/countdown.component'
     ReactiveFormsModule,
     HttpClientModule,
     EventoModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    
   ],
-  providers: [],
+  providers: [
+    AuthService
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

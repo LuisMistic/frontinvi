@@ -1,0 +1,32 @@
+<!-- admin-lista-invitados.component.html -->
+<div class="container">
+    <div class="card">
+      <h2>Lista de Invitados (Administración)</h2>
+      <div class="table-responsive">
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Nombre</th>
+              <th>Correo Electrónico</th>
+              <th>Número de Invitación</th>
+              <th>Observaciones</th>
+              <th>Acciones</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr *ngFor="let invitado of invitados">
+              <td>{{ invitado.nombre }}</td>
+              <td>{{ invitado.correo_electronico }}</td>
+              <td>{{ invitado.numero_invitacion }}</td>
+              <td><input [(ngModel)]="invitado.observaciones" class="form-control" placeholder="Observaciones"></td>
+              <td>
+                <button (click)="actualizarInvitado(invitado.id, invitado)" class="btn btn-primary">Guardar</button>
+                <button (click)="eliminarInvitado(invitado.id)" class="btn btn-danger">Eliminar</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+  

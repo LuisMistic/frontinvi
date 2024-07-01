@@ -13,9 +13,7 @@ export class AppComponent implements OnInit {
   ngOnInit() {
     this.router.events.subscribe(event => {
       if (event instanceof NavigationEnd) {
-        if (event.url === '/') {
-          this.router.navigateByUrl('/registro'); // Redirige siempre al registro al cargar la página
-        }
+        // No necesitamos lógica específica aquí que redirija automáticamente
       }
     });
   }
